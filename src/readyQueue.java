@@ -17,23 +17,31 @@ class ReadyQueue {
                     queue.add(preQueue.get(i));
                     preQueue.remove(i);
                 }
-                }
+            }
             Collections.sort(queue);
 
-            }
-            void clock() {
-                for (int i = 0; i < preQueue.size(); i++) {
-                    queue.get(i).clock();
-                }
-            }
-            Process getFirst(){
-            return queue.get(0);
-            }
-            void memoryCollector(){
-            queue.remove(0);
-            }
+        }
 
+    void clock() {
+        for (int i = 0; i < preQueue.size(); i++) {
+            queue.get(i).clock();
+        }
+    }
 
+    Process getFirst() {
+        return queue.get(0);
+    }
+
+    void memoryCollector() {
+        queue.remove(0);
+    }
+
+    boolean getStatus() {
+
+        return (queue.get(0) == null) && (preQueue.get(0) == null);
 
     }
+
+
+}
 

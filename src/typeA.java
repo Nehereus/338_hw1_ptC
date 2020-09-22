@@ -1,22 +1,24 @@
 class TypeA {
+    static ReadyQueue rq;
 
-    void runATask(Process p){
+    static boolean runATask(Process p) {
         boolean b;
         // read from memory and if it is finished, dump it from the queue
-        b= p.run();
-         if(b)
-             memory.memoryCollector();
-         memory.clock();
+        b = p.run();
+        return b;
+    }
 
 
-         }
-
-
-
-
-
-
-    public static void main(String args[]){
-
-
+    public static void main(String[] args) {
+        boolean b;
+        rq.sort();
+        while (rq.getStatus()) {
+            b = runATask(rq.getFirst());
+            if (b) {
+                rq.memoryCollector();
+                rq.sort();
+            }
+            rq.clock();
+        }
+    }
 }
