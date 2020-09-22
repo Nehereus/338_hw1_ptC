@@ -16,9 +16,9 @@ class TypeA {
             b = runATask(rq.getFirst());
             if (b) {
                 rq.memoryCollector();
-                rq.sort();
             }
             rq.clock();
+            rq.sort();
         }
     }
 }
