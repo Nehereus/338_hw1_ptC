@@ -1,13 +1,18 @@
 
 public class Process implements Comparable<Process> {
-    private int id, priority, arrivalTime, burstTime;
-// this task is a simulation of a single process which contains id, priority number(0,1) where 0 is higher priority
+    private final int arrivalClock;
+    private int id;
+    private int priority;
+    private int arrivalTime;
+    private int burstTime;
+
+    // this task is a simulation of a single process which contains id, priority number(0,1) where 0 is higher priority
     public Process(int id, int priority, int arrivalTime, int burstTime) {
         this.id = id;
         this.priority = priority;
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
-
+        this.arrivalClock = 0;
     }
 
     public int getId() {
