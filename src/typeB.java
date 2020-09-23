@@ -52,7 +52,7 @@ class TypeB {
         System.out.println("this is from type B");
         System.out.println("the average response time is:  " + rp.getAverage(responseTime));
         System.out.println("the average burstCompletionTime time is:  " + rp.getAverage(burstCompletionTime));
-        double i = (double) (switchingTime / cpuClock) * 100;
+        double i = ((double) switchingTime / cpuClock) * 100;
         System.out.println("the %timeSwitching time is:  " + i);
     }
 }
